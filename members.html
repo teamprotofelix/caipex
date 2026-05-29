@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAIPEX — Editors & Leadership</title>
+
+  <meta
+    name="description"
+    content="CAIPEX Editors & Leadership — The team advancing AI-driven IP examination excellence."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #001f63;
+      --cyan: #12b7de;
+      --bg: #f4f6f8;
+      --text: #1f2b3a;
+      --muted: #6c7a89;
+      --glass: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+    }
+
+    body {
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background:
+        url('background.jpg') no-repeat center center fixed,
+        radial-gradient(circle at top left, rgba(18,183,222,0.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(0,31,99,0.08), transparent 35%),
+        linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+      background-size: cover, auto, auto, auto;
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .bg-shape {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .bg-shape::before,
+    .bg-shape::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.12;
+    }
+    .bg-shape::before {
+      width: 500px;
+      height: 500px;
+      background: var(--cyan);
+      top: -120px;
+      left: -120px;
+    }
+    .bg-shape::after {
+      width: 500px;
+      height: 500px;
+      background: var(--navy);
+      bottom: -150px;
+      right: -100px;
+    }
+
+    /* 네비게이션 */
+    .navbar {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px 24px 0 24px;
+      flex-wrap: wrap;
+    }
+    .nav-btn {
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,31,99,0.1);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      cursor: not-allowed;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      opacity: 0.65;
+    }
+    .nav-btn:not(.disabled) {
+      cursor: pointer;
+      opacity: 1;
+      background: rgba(255,255,255,0.75);
+    }
+    .nav-btn:not(.disabled):hover {
+      background: var(--cyan);
+      color: white;
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(18,183,222,0.25);
+    }
+    .nav-btn.disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+    .nav-btn.disabled::after {
+      content: "Soon";
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      background: var(--cyan);
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      pointer-events: none;
+    }
+    .nav-btn.disabled:hover {
+      opacity: 0.7;
+      background: rgba(255,255,255,0.7);
+    }
+
+    /* 메인 컨테이너 */
+    .container {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .hero {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 32px;
+      padding: 64px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "Team";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18rem;
+      font-weight: 800;
+      color: rgba(0,31,99,0.025);
+      letter-spacing: -5px;
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .page-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .page-title span {
+      color: var(--cyan);
+    }
+
+    .page-subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Members 그리드 */
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+    }
+
+    .member-card {
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(0,0,0,0.04);
+      border-radius: 22px;
+      padding: 32px 24px;
+      transition: 0.3s ease;
+      text-align: center;
+    }
+    .member-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    /* 프로필 사진 (원형) */
+    .member-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #e0e7f0, #cbd5e1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      overflow: hidden;
+      border: 3px solid rgba(18,183,222,0.2);
+    }
+    .member-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .member-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .member-role {
+      color: var(--cyan);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+    .member-affiliation {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+    .member-bio {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* "더 많은 멤버" 안내 */
+    .more-members {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(18,183,222,0.05);
+      border: 1px dashed rgba(18,183,222,0.3);
+      border-radius: 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: #8b98a7;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 48px 28px;
+      }
+      .page-title {
+        font-size: 2rem;
+      }
+      .hero::before {
+        font-size: 10rem;
+      }
+      .member-photo {
+        width: 80px;
+        height: 80px;
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-shape"></div>
+
+  <!-- 네비게이션 -->
+  <nav class="navbar">
+    <a class="nav-btn" href="about.html">About</a>
+    <a class="nav-btn" href="publications.html">Publications</a>
+    <a class="nav-btn" href="events.html">Events</a>
+    <a class="nav-btn" href="members.html">Editors & Leadership</a>
+    <a class="nav-btn" href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section class="hero">
+
+      <h1 class="page-title">
+        <span>Editors</span> &amp; Leadership
+      </h1>
+      <p class="page-subtitle">
+        The scholars, examiners, and professionals driving CAIPEX forward.
+      </p>
+
+      <!-- 추가: 알파벳 순 안내 -->
+      <p class="list-note">Listed in alphabetical order by last name.</p>
+
+
+      <!-- Members 그리드 (알파벳순) -->
+      <div class="members-grid">
+
+        <!-- 한성호 (Han Seongho) -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="images/members/photoHAN.jpg" alt="SH"> 
+          </div>
+          <div class="member-name">SH Han</div>
+          <div class="member-role">Examination Quality Evaluator & Patent Attorney</div>
+          <div class="member-affiliation">Ministry of Intellectual Property (MOIP)</div>
+          <div class="member-bio">
+            Majored in Chemistry. Certified Patent Attorney.
+          </div>
+        </div>
+
+        <!-- 전은재 (Jeon Eunjae) -->
+        <div class="member-card">
+          <div class="member-photo">
+
+            <img src="images/members/photoEJ.jpg" alt="EON"> 
+          </div>
+          <div class="member-name">EJ Jun</div>
+          <div class="member-role">Examination Quality Evaluator</div>
+          <div class="member-affiliation">Ministry of Intellectual Property (MOIP)</div>
+          <div class="member-bio">
+            Majored in Chemical Engineering, Bioinformatics, Doctor Philosophiae.
+            Member of TeamProtoFelix, Novelist.
+          </div>
+        </div>
+
+        <!-- 김창주 (Kim Changju) -->
+        <div class="member-card">
+          <div class="member-photo">
+            <span>CK</span>
+          </div>
+          <div class="member-name">CJ Kim</div>
+          <div class="member-role">Examination Quality Evaluator</div>
+          <div class="member-affiliation">Ministry of Intellectual Property (MOIP)</div>
+          <div class="member-bio">
+            Ph.D. in Physics.
+          </div>
+        </div>
+
+        <!-- 김태연 (Kim Taeyeon) -->
+        <div class="member-card">
+          <div class="member-photo">
+            <span>TK</span>
+          </div>
+          <div class="member-name">TY Kim</div>
+          <div class="member-role">Examination Quality Evaluator</div>
+          <div class="member-affiliation">Ministry of Intellectual Property (MOIP)</div>
+          <div class="member-bio">
+            Majored in Electrical, Electronic, and Communication Engineering.
+          </div>
+        </div>
+
+        <!-- 남윤권 (Nam Yoonkwon) -->
+        <div class="member-card">
+          <div class="member-photo">
+            <span>YN</span>
+          </div>
+          <div class="member-name">YK Nam</div>
+          <div class="member-role">Director of Examination Quality Evaluation</div>
+          <div class="member-affiliation">Ministry of Intellectual Property (MOIP)</div>
+          <div class="member-bio">
+            Ph.D. in Engineering, specializing in antenna technology.
+          </div>
+        </div>
+
+        <!-- 박정혜 (Park Jeonghye) -->
+        <div class="member-card">
+          <div class="member-photo">
+            <span>JP</span>
+          </div>
+          <div class="member-name">JH Park</div>
+          <div class="member-role">Editorial & Support Staff</div>
+          <div class="member-affiliation">Ministry of Intellectual Property (MOIP)</div>
+          <div class="member-bio">
+            Majored in Psychology. Over 25 years of practical experience at MOIP.
+            Provides editorial and administrative support for CAIPEX.
+          </div>
+        </div>
+
+        <!-- 박선하 (Park Seonha) -->
+        <div class="member-card">
+          <div class="member-photo">
+            <span>SP</span>
+          </div>
+          <div class="member-name">SH Park</div>
+          <div class="member-role">Examination Quality Evaluator / Trademark-Design Examiner</div>
+          <div class="member-affiliation">Ministry of Intellectual Property (MOIP)</div>
+          <div class="member-bio">
+            Majored in Architecture and Law. Also serves as a Trademark and Design Examiner.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 추가 멤버 예정 안내 -->
+      <div class="more-members">
+        <strong>More editors and contributors joining soon.</strong><br>
+        CAIPEX continues to expand its network of experts and contributors.
+      </div>
+
+      <footer>
+        © 2026 CAIPEX — Collegium of AI-Driven IP Examination Excellence
+      </footer>
+    </section>
+  </div>
+
+  <script>
+    // 비활성화된 네비게이션 버튼 클릭 방지
+    document.querySelectorAll('.nav-btn.disabled').forEach(btn => {
+      btn.addEventListener('click', e => e.preventDefault());
+    });
+  </script>
+</body>
+</html>
