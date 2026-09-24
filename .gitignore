@@ -1,0 +1,11 @@
+# 안전장치: 이 폴더에서 비공개 파일이 실수로 커밋되는 것 방지
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.db
+*.sqlite
+node_modules/
+.DS_Store
+Thumbs.db
