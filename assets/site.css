@@ -868,6 +868,10 @@ html[data-theme="dark"] .research-graphic .g-fill {
 .research-graphic .g-dot {
   fill: currentColor;
 }
+.research-graphic .g-label {
+  fill: currentColor;
+  opacity: 0.85;
+}
 .research-tag {
   font-size: 0.68rem;
   font-weight: 700;

@@ -238,9 +238,9 @@ window.CAIPEX_I18N = {
       ja: 'CAIPEXリサーチ体験'
     },
     'research.sectionIntro': {
-      en: 'Explore the research questions and designs in person — investigate future possibilities through fictional cases and simulations.',
-      ko: '연구의 질문과 설계를 직접 살펴보고, 가상 사례와 시뮬레이션으로 미래의 가능성을 탐색해 보세요.',
-      ja: '研究の問いと設計を直接ご覧いただき、架空事例とシミュレーションで未来の可能性を探ってみてください。'
+      en: 'Explore four research experiences: examination-quality diagnosis, layered AI, Markush chemical claims, and Korea–Japan examination-material comparison.',
+      ko: '심사품질 진단, 계층형 AI, 마쿠쉬 화학 청구항, 한·일 심사자료 비교를 각각의 연구 체험으로 살펴보세요.',
+      ja: '審査品質診断、階層型AI、マーカッシュ化学クレーム、日韓審査資料比較 — それぞれの研究体験をご覧ください。'
     },
     'research.card1.tag': { en: 'IP EXAMINATION QUALITY', ko: 'IP EXAMINATION QUALITY', ja: 'IP EXAMINATION QUALITY' },
     'research.card1.title': {
@@ -279,15 +279,57 @@ window.CAIPEX_I18N = {
       ko: '연구 체험하기 ↗',
       ja: '研究を体験する ↗'
     },
+    'research.card3.tag': { en: 'MARKUSH · CHEMICAL CLAIMS', ko: 'MARKUSH · CHEMICAL CLAIMS', ja: 'MARKUSH · CHEMICAL CLAIMS' },
+    'research.card3.title': {
+      en: 'Markush Chemical Claim Examination Research',
+      ko: '마쿠쉬 화학 청구항 심사 연구',
+      ja: 'マーカッシュ化学クレーム審査研究'
+    },
+    'research.card3.desc': {
+      en: 'Adjust the skeleton of a generic formula, its R substituents, and exclusion conditions to observe how claim scope changes. Compare search results against evidence from individual references, and experience the points where human confirmation is needed in novelty and inventive-step review.',
+      ko: '일반식의 골격, R 치환기와 제외 조건을 바꾸며 청구범위의 변화를 살펴봅니다. 검색 결과와 문헌별 근거를 대조하고, 신규성·진보성 검토에서 사람의 확인이 필요한 지점을 체험합니다.',
+      ja: '一般式の骨格、R置換基、除外条件を変えながらクレーム範囲の変化を観察します。検索結果と文献ごとの根拠を照合し、新規性・進歩性の検討で人の確認が必要なポイントを体験します。'
+    },
+    'research.card3.keywords': {
+      en: 'Claim scope decoding · Reference-level evidence · Examiner review',
+      ko: '청구범위 해독 · 문헌별 증거 · 심사관 검토',
+      ja: 'クレーム範囲の解読 · 文献別の証拠 · 審査官レビュー'
+    },
+    'research.card3.button': {
+      en: 'Try the Markush research ↗',
+      ko: '마쿠쉬 연구 체험하기 ↗',
+      ja: 'マーカッシュ研究を体験する ↗'
+    },
+    'research.card4.tag': { en: 'KOREA–JAPAN · EXAMINATION QUALITY', ko: 'KOREA–JAPAN · EXAMINATION QUALITY', ja: 'KOREA–JAPAN · EXAMINATION QUALITY' },
+    'research.card4.title': {
+      en: 'Korea–Japan Patent Examination Quality Harmonization Research',
+      ko: '한·일 특허심사 품질 조율 연구',
+      ja: '日韓特許審査品質ハーモナイゼーション研究'
+    },
+    'research.card4.desc': {
+      en: 'Compare Korean and Japanese claim versions, prior art, and applied standards within the same patent family. Examine the reasons behind different examination outcomes, and experience fictional cases that distinguish justifiable differences, insufficient data, and candidates for human re-review.',
+      ko: '같은 특허패밀리의 한국·일본 청구항 버전, 선행기술과 적용 기준을 대조합니다. 서로 다른 심사결과의 이유를 살펴보고, 정당한 차이·자료 부족·사람의 재검토 후보를 구별하는 가상 사례를 체험합니다.',
+      ja: '同じ特許ファミリーの韓国・日本のクレーム版、先行技術、適用基準を対照します。異なる審査結果の理由を検討し、正当な違い・資料不足・人の再レビュー候補を区別する架空事例を体験します。'
+    },
+    'research.card4.keywords': {
+      en: 'Claim version comparison · Evidence cross-check · Human re-review',
+      ko: '청구항 버전 비교 · 증거 대조 · 사람의 재검토',
+      ja: 'クレーム版比較 · 証拠対照 · 人の再レビュー'
+    },
+    'research.card4.button': {
+      en: 'Try the Korea–Japan comparison ↗',
+      ko: '한·일 비교 연구 체험하기 ↗',
+      ja: '日韓比較研究を体験する ↗'
+    },
     'research.openNewTab': {
       en: '(opens in a new tab)',
       ko: '(새 탭에서 열림)',
       ja: '(新しいタブで開きます)'
     },
     'research.disclaimer': {
-      en: 'The experiences on these sites are fictional cases or simulations created to explain research concepts. They do not represent actual examination decisions or measured research results. “Layers” and “personas” are functional design concepts — not claims about AI consciousness or emotion.',
-      ko: '각 사이트의 체험은 연구 개념을 설명하기 위한 가상 사례 또는 시뮬레이션입니다. 실제 심사 판단이나 실측 연구 성과를 의미하지 않습니다. ‘계층’과 ‘페르소나’는 기능적 설계 개념이며, AI의 의식이나 감정을 뜻하지 않습니다.',
-      ja: '各サイトの体験は、研究コンセプトを説明するための架空事例またはシミュレーションです。実際の審査判断や実測の研究成果を示すものではありません。「階層」と「ペルソナ」は機能的な設計概念であり、AIの意識や感情を意味するものではありません。'
+      en: 'The experiences on these sites are fictional cases or simulations created to explain research concepts. They do not represent actual examination decisions or measured research results, and results from live AI features are draft analyses for research purposes. “Layers” and “personas” are functional design concepts — not claims about AI consciousness or emotion.',
+      ko: '각 사이트의 체험은 연구 개념을 설명하기 위한 가상 사례 또는 시뮬레이션입니다. 실제 심사 판단이나 실측 연구 성과를 의미하지 않으며, 라이브 AI가 제공하는 결과는 연구용 분석 초안입니다. ‘계층’과 ‘페르소나’는 기능적 설계 개념이며, AI의 의식이나 감정을 뜻하지 않습니다.',
+      ja: '各サイトの体験は、研究コンセプトを説明するための架空事例またはシミュレーションです。実際の審査判断や実測の研究成果を示すものではなく、ライブAIの結果は研究用の分析草案です。「階層」と「ペルソナ」は機能的な設計概念であり、AIの意識や感情を意味するものではありません。'
     },
 
     /* ── 메타 ── */
